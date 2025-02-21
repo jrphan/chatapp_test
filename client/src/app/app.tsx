@@ -1,11 +1,15 @@
-import NxWelcome from './nx-welcome';
+import router from '../routes';
+import { RouterProvider } from 'react-router-dom';
+import { GlobalStyles } from '../styles/GlobalStyles';
+import { ThemeProviderWrapper } from '../context/ThemeContext';
 
-export function App() {
+const App = () => {
   return (
-    <div>
-      <NxWelcome title="@nx-chat-assignment/client" />
-    </div>
+    <ThemeProviderWrapper>
+      <GlobalStyles />
+      <RouterProvider router={router} />
+    </ThemeProviderWrapper>
   );
-}
+};
 
 export default App;
